@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+</head>
+
+<body>
+	<div class="container">
+	<section id="content">
+		<form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
+			<h1>Login </h1>
+			<div>
+				<input name="nombre" type="text" placeholder="Nombre de usuario" required="" id="username" />
+			</div>
+			<div>
+				<input name="password" type="password" placeholder="Password" required="" id="password" />
+			</div>
+			<div>Recordar datos
+			<input type="checkbox" id="recordar" name="recordar">
+			</div>
+			<div>
+				
+				<input name="enviar" type="submit" value="Log in" />
+				<a href="#">perdiste tu contraseña?</a>
+				<a href="#">Registro</a>
+			</div>
+		</form><!-- form -->
+		<div class="button">
+		<!--	<a href=''#''>Download source file</a> -->
+		</div><!-- button -->
+	</section><!-- content -->
+</div><!-- container -->
+</body>
+</html>

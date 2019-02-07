@@ -1,0 +1,17 @@
+<?php
+require("config.php");
+class Conexion{
+protected $conexion_db;
+ public function __construct(){
+	$this->conexion_db=new MySQLi(DB_HOST,DB_USUARIO,DB_CONTRA,DB_NOMBRE) ;
+	 if($this->conexion_db->connect_errno){
+		 echo "Fallo al conectar a Mysql: " . $this->conexion_db->connect_error;
+		 return;
+	 }
+	 $this->conexion_db->set_charset(DB_CHARSET);
+	 
+	 
+ }	
+	
+}
+?>
