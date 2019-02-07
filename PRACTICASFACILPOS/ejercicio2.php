@@ -14,6 +14,8 @@ session_start();
 ?>
 
 <!DOCTYPE html>
+<!-- APLICAR JAVASCRIPT A FORMULARIO PRODUCTO CANTINDAD PRECIO  GANANCIA -->
+
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -25,65 +27,102 @@ session_start();
 	<title>Ejercicio Dos</title>
 </head>
 <body class="p-3 mb-2 bg-info">
-	<h3 class="text-center"><b>INGRESE SU PRODUCTO</b></h3>
+<?php
+
+	if(isset($_SESSION["usuario"])){
+		include("nav.php");
+echo ' <br> <h3 class="text-center"><b>REGISTRE SU PRODUCTO</b></h3>
 	 <br>
-<div class="container border border-primary p-3 mb-2 bg-dark text-white">
+<div class="container-fluid border border-primary p-3 mb-2 bg-dark text-white">
  <br>
 <form action="ejercicio2.php" method="POST" class="text-center" required id="datos">
 	
 	<div class="row">
-		<div class="col">
+	<div class="col-md-1">
+		</div>
+		<div class="col-md-2">
 		<b>	<label for="isbn">ISBN:</label></b>
-			<input  type="text" class="form-control text-center"  id="isbn" name="isbn" placeholder='ISBN' required>
-<b>	<label for="tamano">Tamaño:</label></b>
-			<input  type="text" id="tamano"  class="form-control text-center" name="tamano" placeholder='Tamaño' required>
+			<input  type="text" class="form-control text-center bg-warning"  id="isbn" name="isbn" placeholder="ISBN" required>
+		</div>
+		<div class="col-md-2">
+		<b>	<label for="isbn">Nombre:</label></b>
+			<input  type="text" class="form-control text-center bg-warning" id="nombre" name="nombre" placeholder="Nombre" required>
+		</div>
+		<div class="col-md-2">
+		<b>	<label for="costo">Costo:</label></b>
+			<input  type="number"  class="form-control text-center bg-warning" id="costo" name="costo" placeholder="Costo" required>
+		</div>
+		<div class="col-md-2">
+			<b>	<label for="precio">Precio:</label></b>
+			<input  type="number"  class="form-control text-center bg-warning" id="precio" name="precio" placeholder="Precio de venta" required>
+		</div>
+		<div class="col-md-2">
+		<b>	<label for="ganancia">Ganancia:</label></b>
+			<input  type="number"  class="form-control text-center bg-warning" id="ganancia" name="ganancia" placeholder="Ganancia" required>	
+		</div>
+	<div class="col-md-1">
+		</div>
+	
+	</div>
+		<br>
+	<div class="row">
+	<div class="col-md-1">
+		</div>
+		<div class="col-md-2">
+		<b>	<label for="tamano">Tamaño:</label></b>
+			<input  type="text" id="tamano"  class="form-control text-center bg-warning" name="tamano" placeholder="Tamaño" required>		
+		</div>
+		<div class="col-md-2">
+		<b>	<label for="color">Color:</label></b>	
+			<input  type="text"   class="form-control text-center bg-warning" id="color" name="color" placeholder="Color" required>
+		</div>
+		<div class="col-md-2">
+		<b>	<label for="cantidad">Stock:</label></b>
+			<input  type="number"   class="form-control text-center bg-warning" id="cantidad" name="cantidad" placeholder="Cantidad en Stock" required>
+		</div>
+		<div class="col-md-2">
+		<b>	<label for="cantidadB">Bodega:</label></b>
+				<input  type="number" class="form-control text-center bg-warning"  id="cantidadB" name="cantidadB" placeholder="Cantidad en Bodega" required>
+	</div>
+		<div class="col-md-2">
+		<b><label for="fecha">Fecha:</label></b>	
+			<input  type="date" class="form-control text-center bg-warning" id="fecha" name="fecha" placeholder="Fecha" required>
+	</div>
+	<div class="col-md-1">
+		</div>
+	
+	</div>
+	<br>	
+	<div class="row">
 		
-
+		<div class="col-md-1">
+		</div>
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-2">
+		
+		<b>	<label for="categoria">Categoria:</label></b>
+			<input  type="text"  id="categoria"  class="form-control text-center bg-warning" name="categoria" placeholder="Categoría" required>
 				
 		</div>
-		<div class="col">
-		<b>	<label for="isbn">Nombre:</label></b>
-			<input  type="text" class="form-control text-center" id="nombre" name="nombre" placeholder='Nombre' required>
-
-		<b>	<label for="color">Color:</label></b>	
-			<input  type="text"   class="form-control text-center" id="color" name="color" placeholder='Color' required>
-
-			
+		<div class="col-md-2">
 		</div>
-		<div class="col">
-		<b>	<label for="costo">Costo:</label></b>
-			<input  type="number"  class="form-control text-center" id="costo" name="costo" placeholder='Costo' required>
-
-		<b>	<label for="cantidad">Cantidad en Stock:</label></b>
-			<input  type="number"   class="form-control text-center" id="cantidad" name="cantidad" placeholder='Cantidad en Stock' required>
-
-		<b>	<label for="precio">Precio:</label></b>
-			<input  type="number"  class="form-control text-center" id="precio" name="precio" placeholder='Precio de venta' required>
+		<div class="col-md-2">
 		</div>
-		<div class="col">
-			<b>	<label for="ganancia">Ganancia:</label></b>
-			<input  type="number"  class="form-control text-center" id="ganancia" name="ganancia" placeholder='Ganancia' required>
-			
-
-			<b>	<label for="cantidadB">Cantidad en Bodega:</label></b>
-				<input  type="number" class="form-control text-center"  id="cantidadB" name="cantidadB" placeholder='Cantidad en Bodega' required>
-			</div>
-		
-		<div class="col">
-			<b>	<label for="categoria">Categoria:</label></b>
-			<input  type="text"  id="categoria"  class="form-control text-center" name="categoria" placeholder='Categoría' required>
-			<b><label for="fecha">Fecha:</label></b>	
-			<input  type="date" class="form-control text-center" id="fecha" name="fecha" placeholder='Fecha' required>
+		<div class="col-md-1">
 		</div>
-	</div><br>
-		<button class="btn btn-primary" type="submit" ><b>Guardar</b></button>
+	</div>
+<br>
+		<button class="btn btn-primary bg-warning" type="submit" ><b>Guardar</b></button>
 	
 		</form>
 	 <br>
 </div>
-	 <br>
-<?php
-	
+	 <br>';
+
+
 	$productos=array();
 	// le decimos a php que vamos a trabajar con sesiones
 		
@@ -142,11 +181,16 @@ session_start();
 					
 				}
 		echo "</table>";
+	
 	}
 	else{
-		echo "No ha guardado ningún valor";
+		
+		echo " No ha guardado ningún valor <br>";
 	}
-	?>
+	echo '<a class="text-dark" href="destroy.php">Cerrar Sesión</a>';	
+	}else
+		echo "nada para mostrar";
+	?>	
     <script>
     $('#datos').validate({
 		submitHandler:function(form)
