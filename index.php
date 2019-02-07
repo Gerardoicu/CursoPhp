@@ -23,6 +23,7 @@ if ($resultado)// devuelve un true si no son iguales
 {
 echo "<p class='resaltar'> no son iguales</p>";
 	}
+	
 	else{
 	echo "<p class='resaltar'>  son iguales</p>";	
 	}
