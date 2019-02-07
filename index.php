@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Practicando php</title>
+<title>Practicando php</title>
 	<style>
 	.resaltar{
 	 color:#f00;
